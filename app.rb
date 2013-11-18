@@ -20,14 +20,17 @@ use Rack::Session::Pool, :expire_after => 2592000
 #  set :sessions, :domain => 'herokuapp.com'
 #end
 
+#A Sqlite3 connection to a persistent database
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/tresenraya.db")
 end
 
+#Para recibir la url de la base de datos
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
+#
 DataMapper.auto_upgrade!
 
 module TicTacToe
@@ -55,6 +58,11 @@ module TicTacToe
 
   def board
     session["bs"]
+  end
+
+  #Añadir sesiones para el usuario
+  def usuario
+    session["usuario"]
   end
 
   def [] key
