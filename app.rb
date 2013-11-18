@@ -148,6 +148,11 @@ module TicTacToe
   def computer_wins?
     winner == COMPUTER
   end
+
+  #Para saber quien pierde
+  #def tie?
+  #    ((winner != COMPUTER) && (winner != HUMAN))
+  #end
 end
 
 helpers TicTacToe
@@ -181,7 +186,15 @@ get '/humanwins' do
   pp session
   begin
     m = if human_wins? then
-          'Human wins'
+         if (session["usuario"] != nil)
+            un_usuario = Usuario.first(:username => session["usuario"])
+            un_usuario.partidas_ganadas = un_usuario.partidas_ganadas + 1
+            un_usuario.partidas_jugadas = un_usuario.partidas_jugadas + 1
+            un_usuario.save
+            pp un_usuario
+            p "---------"
+          end
+         'Human wins'
         else 
           redirect '/'
         end
@@ -196,6 +209,12 @@ get '/computerwins' do
   pp session
   begin
     m = if computer_wins? then
+          if (session["usuario"] != nil)
+            un_usuario = Usuario.first(:username => session["usuario"])
+            un_usuario.partidas_perdidas = un_usuario.partidas_perdidas + 1
+            un_usuario.partidas_jugadas = un_usuario.partidas_jugadas + 1
+            un_usuario.save
+          end
           'Computer wins'
         else 
           redirect '/'
@@ -204,6 +223,35 @@ get '/computerwins' do
   rescue
     redirect '/'
   end
+end
+
+
+post '/' do
+  if params[:logout]
+    @usuario = nil
+    session["usuario"] = nil
+    session.clear
+  else
+    nick = params[:usuario]
+    nick = nick["username"]
+    u = Usuario.first(:username => "#{nick}" )
+    if u == nil
+      usuario = Usuario.create(params[:usuario])
+      usuario.save
+      Aux = params[:usuario]
+      pp params[:usuario]
+      @usuario = Aux["username"]
+      p "ATENCION"
+      pp @usuario
+      session["usuario"] = @usuario
+    else
+      p "Ya existe el usuario"
+      @usuario = nil
+      session["usuario"] = nil
+      session.clear
+    end
+  end
+    redirect '/'
 end
 
 not_found do
