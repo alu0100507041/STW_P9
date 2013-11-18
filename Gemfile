@@ -4,7 +4,6 @@ gem "sinatra"
 gem 'haml'
 gem "sass", :require => 'sass'
 gem 'thin'
-gem "sass"
 gem "dm-core"
 gem "dm-migrations"
 gem "pg", :group => :production
