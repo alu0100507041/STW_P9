@@ -1,3 +1,9 @@
+h1 {
+  color: darkcyan; }
+
+a {
+  color: darkcyan; }
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: url("/images/blackboard.jpg") repeat;

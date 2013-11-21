@@ -10,7 +10,10 @@ $b: 3;
 $c: 6;
 $par: #8B008B;
 $impar: #008B8B;
+$ran: #000000;
 
+$main-font: Helvetica, Arial, sans-serif;
+$message-font: 22px/1;
 
 $board-left: 300px;
 $board-margin: 0 auto;
@@ -26,6 +29,14 @@ $cell-padding:  $cell-width/1.3;
 $background: "/images/blackboard.jpg";
 $cross:      "/images/cross.png";
 $circle:     "/images/circle.png";
+
+h1{
+	color: $impar;
+}
+
+a{
+	color: $impar;
+}
 
 body       { 
              // background-color: lightgrey; 
@@ -66,6 +77,7 @@ body       {
              display: inline;
              background-color:transparent;
            }
+
 @for $i from 1 through 3 {
   @if ( (($i+$a) % (2)) == 0 ){
     #a#{$i}:hover {background-color:$par;}

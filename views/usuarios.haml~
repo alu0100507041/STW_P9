@@ -1,0 +1,33 @@
+%center
+  .ranking
+    %h1 RANKING
+    .hero-unit
+      %table.table-hover
+        %thead
+          %tr
+            %th Nombre
+            %th
+            %th
+            %th Jugadas 
+            %th
+            %th
+            %th Ganadas
+            %th
+            %th
+            %th Perdidas
+        %tbody
+          - @usuarios.sort_by {|k, v| v}.reverse.each do |usuario|
+            %tr
+              %td #{usuario.username}
+              %td
+              %td
+              %td #{usuario.partidas_jugadas}
+              %td
+              %td
+              %td #{usuario.partidas_ganadas}
+              %td
+              %td
+              %td #{usuario.partidas_perdidas}
+            %tr
+            %tr
+

@@ -31,7 +31,7 @@
                   %input{:type=>"hidden",:name=>"usuario[partidas_ganadas]",:value=>"0"}
                   %input{:type=>"hidden",:name=>"usuario[partidas_perdidas]",:value=>"0"}
                   %input{:type=>"hidden",:name=>"usuario[partidas_jugadas]",:value=>"0"}
-                  %button.btn.btn-primary{type: "submit", :value=>"Entrar"} Entrar 
+                  %button.btn.btn-primary{type: "submit", :value=>"Entrar"}Entrar 
             -else
               %form.form-search.right{:action=>"/",:method=>"post"}
 
