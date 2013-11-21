@@ -39,30 +39,3 @@ body {
 .message {
   display: inline;
   background-color: transparent; }
-
-#a1:hover {
-  background-color: darkcyan; }
-
-#a2:hover {
-  background-color: darkmagenta; }
-
-#a3:hover {
-  background-color: darkcyan; }
-
-#b1:hover {
-  background-color: darkmagenta; }
-
-#b2:hover {
-  background-color: darkcyan; }
-
-#b3:hover {
-  background-color: darkmagenta; }
-
-#c1:hover {
-  background-color: darkcyan; }
-
-#c2:hover {
-  background-color: darkmagenta; }
-
-#c3:hover {
-  background-color: darkcyan; }

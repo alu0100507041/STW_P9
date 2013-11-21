@@ -10,10 +10,7 @@ $b: 3;
 $c: 6;
 $par: #8B008B;
 $impar: #008B8B;
-$ran: #000000;
 
-$main-font: Helvetica, Arial, sans-serif;
-$message-font: 22px/1;
 
 $board-left: 300px;
 $board-margin: 0 auto;
