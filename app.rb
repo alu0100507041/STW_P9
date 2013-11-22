@@ -188,7 +188,7 @@ get '/humanwins' do
 end
 
 
-# Peticion get de cuando la maquina gana
+# Peticion get cuando la maquina gana
 
 get '/computerwins' do
   puts "/computerwins"
