@@ -1,8 +1,7 @@
-h1 {
+.container {
   color: darkcyan; }
-
-a {
-  color: darkcyan; }
+  .container h1 {
+    color: darkcyan; }
 
 body {
   font-family: Helvetica, Arial, sans-serif;

@@ -30,11 +30,7 @@ $background: "/images/blackboard.jpg";
 $cross:      "/images/cross.png";
 $circle:     "/images/circle.png";
 
-h1{
-	color: $impar;
-}
-
-a{
+.container{
 	color: $impar;
 }
 
