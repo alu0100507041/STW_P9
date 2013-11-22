@@ -5,7 +5,7 @@
 
 ## Objetivo
 
-
+Utilizando sinatra y sass implementar el tres en raya
 
 -------------------------
 
