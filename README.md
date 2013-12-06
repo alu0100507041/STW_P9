@@ -5,7 +5,7 @@
 
 ## Objetivo
 
-Utilizando sinatra y sass implementar el tres en raya
+Utilizando sinatra, javascript, haml, ajax y sass implementar el tres en raya
 
 -------------------------
 
@@ -23,4 +23,4 @@ Utilizando sinatra y sass implementar el tres en raya
 
 * rake
 	http://localhost:4567/
-* http://mighty-earth-1189.herokuapp.com
+* http://pacific-mesa-6187.herokuapp.com/ 
