@@ -155,8 +155,10 @@ get %r{^/([abc][123])?$} do |human|
       board[human] = TicTacToe::CIRCLE
       # computer = board.legal_moves.sample
       computer = smart_move
-      redirect to ('/humanwins') if human_wins?
-      redirect to('/') unless computer
+      #redirect to ('/humanwins') if human_wins?
+      #redirect to('/') unless computer
+      return '/himanwins' if human_wins?
+      return '/' unless computer
       board[computer] = TicTacToe::CROSS
       puts "I played: #{computer}!"
       puts "Tablero: #{board.inspect}"

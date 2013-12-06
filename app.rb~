@@ -167,7 +167,7 @@ get %r{^/([abc][123])?$} do |human|
   else
     session["bs"] = inicializa()
     puts "session = "
-    pp session
+    resultado = "ilegal"
   end
   haml :game, :locals => { :b => board, :m => '' }
 end
