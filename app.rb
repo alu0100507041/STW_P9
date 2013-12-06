@@ -15,6 +15,7 @@ end
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
+
 DataMapper.auto_upgrade!
 
 module TicTacToe
@@ -136,6 +137,13 @@ end
 helpers TicTacToe
 
 
+# Metodo get/ para que muestre la plantilla al comienzo
+
+get "/" do
+  session["bs"] = inicializa()
+  haml :game, :locals => { :b => board, :m => 'lets play' }
+end
+
 # Peticion get de las jugadas del tablero 3x3
 
 get %r{^/([abc][123])?$} do |human|
@@ -152,12 +160,14 @@ get %r{^/([abc][123])?$} do |human|
       board[computer] = TicTacToe::CROSS
       puts "I played: #{computer}!"
       puts "Tablero: #{board.inspect}"
-      redirect to ('/computerwins') if computer_wins?
+      #redirect to ('/computerwins') if computer_wins?
+      return '/computerwins' if computer_wins?
+      resultado = computer
     end
   else
     session["bs"] = inicializa()
     puts "session = "
-    pp session
+    resultado = "ilegal"
   end
   haml :game, :locals => { :b => board, :m => '' }
 end
